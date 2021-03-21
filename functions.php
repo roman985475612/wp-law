@@ -7,6 +7,9 @@
  * @package Law
  */
 
+require_once get_template_directory() . '/LawHeaderMenu.php';
+require_once get_template_directory() . '/helpers.php';
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -50,7 +53,8 @@ if ( ! function_exists( 'law_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'law' ),
+				'header-menu' => esc_html__( 'Header menu', 'law' ),
+				'footer-menu' => esc_html__( 'Footer menu', 'law' ),
 			)
 		);
 
@@ -150,6 +154,7 @@ function law_scripts() {
 	wp_enqueue_style( 'law-theme-css', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css' );
 	wp_enqueue_style( 'law-flexslider-css', get_template_directory_uri() . '/assets/css/flexslider.css' );
 	wp_enqueue_style( 'law-style-css', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'law-custom-css', get_template_directory_uri() . '/assets/css/custom.css' );
 
 	wp_style_add_data( 'law-style', 'rtl', 'replace' );
 
