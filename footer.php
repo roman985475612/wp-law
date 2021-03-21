@@ -20,13 +20,11 @@
             </div>
             <div class="col-md-3 col-md-push-1">
                 <h4>Navigation</h4>
-                <ul class="fh5co-footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Practice Areas</a></li>
-                    <li><a href="#">Won Cases</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About us</a></li>
-                </ul>
+                <?php wp_nav_menu([
+                    'theme_location' => 'footer-menu',
+                    'container'      => false,
+                    'menu_class'     => 'fh5co-footer-links',
+                ]) ?>
             </div>
 
             <div class="col-md-3 col-md-push-1">
