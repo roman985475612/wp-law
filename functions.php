@@ -181,25 +181,10 @@ function law_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'law_scripts' );
 
-function law_counter_posttype()
-{
-    register_post_type( 'counter', [
-            'labels'        => [
-                'name'          => __( 'Counter', 'law' ),
-                'singular_name' => __( 'Counter', 'law' ),
-            ],
-            'public'        => true,
-            'has_archive'   => true,
-            'rewrite'       => true,
-            'supports'      => [
-                'title',
-                'revisions',
-                'custom-fields',
-            ],
-        ]
-    );
-}
-add_action( 'init', 'law_counter_posttype', 0 );
+/**
+ * Custom post type
+ */
+require get_template_directory() . '/inc/custom-posttype.php';
 
 /**
  * Implement the Custom Header feature.

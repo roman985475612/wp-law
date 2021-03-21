@@ -43,8 +43,8 @@ if( $query->have_posts() ): ?>
             <div class="row">
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="col-md-3 text-center animate-box">
-                        <span class="icon"><i class="<?= get_post_meta($post->ID, 'icon')[0] ?>"></i></span>
-                        <span class="fh5co-counter js-counter" data-from="0" data-to="<?= get_post_meta($post->ID, 'counter')[0] ?>" data-speed="5000" data-refresh-interval="50"></span>
+                        <span class="icon"><i class="<?= get_post_meta($post->ID, 'icon', true) ?>"></i></span>
+                        <span class="fh5co-counter js-counter" data-from="0" data-to="<?= get_post_meta($post->ID, 'counter', true) ?>" data-speed="5000" data-refresh-interval="50"></span>
                         <span class="fh5co-counter-label"><?= the_title() ?></span>
                     </div>
                 <?php endwhile ?>
@@ -53,5 +53,18 @@ if( $query->have_posts() ): ?>
         </div>
     </div>
 <?php endif ?>
+<?php $page_id = get_page_by_path( 'home' )->ID ?>
+<div id="fh5co-content">
+    <div class="video fh5co-video" style="background-image: url(<?= get_template_directory_uri() ?>/assets/images/video.jpg);">
+        <a href="<?= get_post_meta( $page_id, 'video', true) ?>" class="popup-vimeo"><i class="icon-video2"></i></a>
+        <div class="overlay"></div>
+    </div>
+    <div class="choose animate-box">
+        <div class="fh5co-heading">
+            <h2>Why Choose Us?</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+        </div>
+    </div>
+</div>
 
 <?php get_footer(); ?>
