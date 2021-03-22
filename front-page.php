@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <aside id="fh5co-hero" class="js-fullheight">
     <div class="flexslider js-fullheight">
         <ul class="slides">
@@ -157,6 +156,67 @@ if( $query->have_posts() ): ?>
 </div>
 <?php endif ?>
 
+<?php
+$query = new WP_Query([
+    'post_type'         => 'testimonial',
+    'orderby'           => 'date',
+    'order'             => 'ASC',
+    'posts_per_page'    => 6,
+]);
+if( $query->have_posts() ): ?>
+    <div id="fh5co-testimonial" class="fh5co-bg-section">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                    <h2>Testimonials</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row animate-box">
+                        <div class="owl-carousel owl-carousel-fullwidth">
+                            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                                <div class="item">
+                                    <div class="testimony-slide active text-center">
+                                        <figure>
+                                            <?php the_post_thumbnail( 'full' ) ?>
+                                        </figure>
+                                        <span><?=the_title()?>, via <a href="https://twitter.com/<?=get_post_meta($post->ID, 'twitter', true)?>" class="twitter">Twitter</a></span>
+                                        <blockquote>
+                                            <p>&ldquo;<?=$post->post_content?>&rdquo;</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata() ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+
+
+<div id="fh5co-consult">
+    <div class="choose animate-box">
+        <div class="fh5co-heading">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto blanditiis corporis dicta eaque, earum iure nihil omnis quod sequi tempora vitae? Accusantium error laborum maiores nostrum obcaecati praesentium quasi qui vero. Aliquid architecto deserunt, distinctio dolores est eveniet fuga ipsa nisi numquam praesentium quas quos recusandae soluta totam vitae.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ex praesentium rerum. Ab aliquid amet aspernatur commodi cumque delectus dolores ducimus ea, eius eveniet id, ipsam, laboriosam libero magni maxime nulla quaerat quia quidem recusandae rem repellendus sed sint soluta vero voluptatum. Commodi delectus iste perferendis praesentium soluta sunt unde!</p>
+            </div>
+        </div>
+    </div>
+    <div class="choose animate-box">
+        <div class="fh5co-heading">
+            <h2>Free Legal Consultation</h2>
+        </div>
+        <?= do_shortcode('[contact-form-7 id="96" title="Free Legal Consultation"]') ?>
+    </div>
+</div>
 
 
 <?php get_footer(); ?>

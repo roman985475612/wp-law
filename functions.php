@@ -181,6 +181,20 @@ function law_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'law_scripts' );
 
+function law_setup_phpmailer_init( $phpmailer )
+{
+    $phpmailer->IsSMTP();
+    $phpmailer->Host        = SMTP_HOST;
+    $phpmailer->Port        = SMTP_PORT;
+    $phpmailer->Username    = SMTP_USER;
+    $phpmailer->Password    = SMTP_PASS;
+    $phpmailer->SMTPAuth    = SMTP_AUTH;
+    $phpmailer->SMTPSecure  = SMTP_SECURE;
+    $phpmailer->From        = SMTP_FROM;
+    $phpmailer->FromName    = SMTP_NAME;
+}
+add_action( 'phpmailer_init', 'law_setup_phpmailer_init' );
+
 /**
  * Custom post type
  */
@@ -212,4 +226,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

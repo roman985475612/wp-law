@@ -61,7 +61,7 @@ function law_practice_posttype()
 }
 add_action( 'init', 'law_practice_posttype', 0 );
 
-function law_counseling()
+function law_counseling_posttype()
 {
     register_post_type( 'counseling', [
             'labels'        => [
@@ -81,4 +81,27 @@ function law_counseling()
         ]
     );
 }
-add_action( 'init', 'law_counseling', 0 );
+add_action( 'init', 'law_counseling_posttype', 0 );
+
+function law_testimonial_posttype()
+{
+    register_post_type( 'testimonial', [
+            'labels'        => [
+                'name'          => __( 'Testimonial', 'law' ),
+                'singular_name' => __( 'Testimonial', 'law' ),
+            ],
+            'public'        => true,
+            'show_ui'       => true,
+            'show_in_menu'  => true,
+            'has_archive'   => true,
+            'rewrite'       => true,
+            'supports'      => [
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            ],
+        ]
+    );
+}
+add_action( 'init', 'law_testimonial_posttype', 0 );
