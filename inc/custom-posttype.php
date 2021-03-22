@@ -60,3 +60,25 @@ function law_practice_posttype()
     );
 }
 add_action( 'init', 'law_practice_posttype', 0 );
+
+function law_counseling()
+{
+    register_post_type( 'counseling', [
+            'labels'        => [
+                'name'          => __( 'Counseling', 'law' ),
+                'singular_name' => __( 'Counseling', 'law' ),
+            ],
+            'public'        => true,
+            'show_ui'       => true,
+            'show_in_menu'  => true,
+            'has_archive'   => true,
+            'rewrite'       => true,
+            'supports'      => [
+                'title',
+                'editor',
+                'thumbnail',
+            ],
+        ]
+    );
+}
+add_action( 'init', 'law_counseling', 0 );
