@@ -38,3 +38,25 @@ function law_progress_posttype()
     );
 }
 add_action( 'init', 'law_progress_posttype', 0 );
+
+function law_practice_posttype()
+{
+    register_post_type( 'practice', [
+            'labels'        => [
+                'name'          => __( 'Practice', 'law' ),
+                'singular_name' => __( 'Practice', 'law' ),
+            ],
+            'public'        => true,
+            'show_ui'       => true,
+            'show_in_menu'  => true,
+            'has_archive'   => true,
+            'rewrite'       => true,
+            'supports'      => [
+                'title',
+                'editor',
+                'custom-fields',
+            ],
+        ]
+    );
+}
+add_action( 'init', 'law_practice_posttype', 0 );
