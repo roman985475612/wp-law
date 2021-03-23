@@ -18,4 +18,6 @@
 
 <?php get_template_part( 'template-parts/section', 'about' ) ?>
 
+<?php get_template_part( 'template-parts/section', 'started' ) ?>
+
 <?php get_footer(); ?>

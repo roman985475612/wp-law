@@ -13,3 +13,24 @@
     border-radius: 30px !important;
     padding: 8px 20px !important;
 }
+
+#fh5co-footer .row-pb-md .col-md-3:nth-child(2) {
+    padding-left: 5em !important;
+}
+
+#menu-footer-menu {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+#menu-footer-menu li {
+    list-style-type: none !important;
+}
+
+#menu-footer-menu li a {
+    color: rgba(0, 0, 0, .5) !important;
+}
+
+#menu-footer-menu li.current_page_item a {
+    color:#F95959 !important;
+}

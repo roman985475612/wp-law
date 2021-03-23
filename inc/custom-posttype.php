@@ -168,3 +168,26 @@ function law_about_posttype()
 }
 add_action( 'init', 'law_about_posttype', 0 );
 
+function law_started_posttype()
+{
+    register_post_type( 'started', [
+            'labels'        => [
+                'name'          => __( 'Started', 'law' ),
+                'singular_name' => __( 'Started', 'law' ),
+            ],
+            'public'        => true,
+            'show_ui'       => true,
+            'show_in_menu'  => true,
+            'has_archive'   => true,
+            'rewrite'       => true,
+            'show_in_menu'  => 'sections',
+            'supports'      => [
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            ],
+        ]
+    );
+}
+add_action( 'init', 'law_started_posttype', 0 );
