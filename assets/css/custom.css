@@ -1,3 +1,15 @@
 .active-dropdown > a{
     color: #F95959 !important;
 }
+
+.form-control {
+    padding: 10px 20px !important;
+}
+
+.btn-submit {
+    background: #F95959 !important;
+    color: #fff !important;
+    border: 2px solid #F95959 !important;
+    border-radius: 30px !important;
+    padding: 8px 20px !important;
+}

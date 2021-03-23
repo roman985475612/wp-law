@@ -16,4 +16,6 @@
 
 <?php get_template_part( 'template-parts/section', 'blog' ) ?>
 
+<?php get_template_part( 'template-parts/section', 'about' ) ?>
+
 <?php get_footer(); ?>

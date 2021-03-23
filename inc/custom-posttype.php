@@ -144,3 +144,27 @@ function law_testimonial_posttype()
 }
 add_action( 'init', 'law_testimonial_posttype', 0 );
 
+function law_about_posttype()
+{
+    register_post_type( 'about', [
+            'labels'        => [
+                'name'          => __( 'About', 'law' ),
+                'singular_name' => __( 'About', 'law' ),
+            ],
+            'public'        => true,
+            'show_ui'       => true,
+            'show_in_menu'  => true,
+            'has_archive'   => true,
+            'rewrite'       => true,
+            'show_in_menu'  => 'sections',
+            'supports'      => [
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            ],
+        ]
+    );
+}
+add_action( 'init', 'law_about_posttype', 0 );
+
