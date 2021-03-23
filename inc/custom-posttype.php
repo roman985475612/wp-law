@@ -1,5 +1,39 @@
 <?php
 
+add_action('admin_menu', function() {
+    add_menu_page(
+        __( 'Sections', 'law' ),
+        __( 'Sections', 'law' ),
+        'manage_options',
+        'sections',
+        'add_my_setting',
+        'dashicons-admin-page',
+        6
+    );
+});
+
+function law_slides_posttype()
+{
+    register_post_type( 'slides', [
+            'labels'        => [
+                'name'          => __( 'Slides', 'law' ),
+                'singular_name' => __( 'Slides', 'law' ),
+            ],
+            'public'        => true,
+            'has_archive'   => true,
+            'rewrite'       => true,
+            'show_in_menu'  => 'sections',
+            'supports'      => [
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields',
+            ],
+        ]
+    );
+}
+add_action( 'init', 'law_slides_posttype', 0 );
+
 function law_counter_posttype()
 {
     register_post_type( 'counter', [
@@ -10,9 +44,9 @@ function law_counter_posttype()
             'public'        => true,
             'has_archive'   => true,
             'rewrite'       => true,
+            'show_in_menu'  => 'sections',
             'supports'      => [
                 'title',
-                'revisions',
                 'custom-fields',
             ],
         ]
@@ -30,6 +64,7 @@ function law_progress_posttype()
             'public'        => true,
             'has_archive'   => true,
             'rewrite'       => true,
+            'show_in_menu'  => 'sections',
             'supports'      => [
                 'title',
                 'custom-fields',
@@ -51,6 +86,7 @@ function law_practice_posttype()
             'show_in_menu'  => true,
             'has_archive'   => true,
             'rewrite'       => true,
+            'show_in_menu'  => 'sections',
             'supports'      => [
                 'title',
                 'editor',
@@ -73,6 +109,7 @@ function law_counseling_posttype()
             'show_in_menu'  => true,
             'has_archive'   => true,
             'rewrite'       => true,
+            'show_in_menu'  => 'sections',
             'supports'      => [
                 'title',
                 'editor',
@@ -95,6 +132,7 @@ function law_testimonial_posttype()
             'show_in_menu'  => true,
             'has_archive'   => true,
             'rewrite'       => true,
+            'show_in_menu'  => 'sections',
             'supports'      => [
                 'title',
                 'editor',
@@ -105,3 +143,4 @@ function law_testimonial_posttype()
     );
 }
 add_action( 'init', 'law_testimonial_posttype', 0 );
+
