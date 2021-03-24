@@ -146,6 +146,7 @@ add_action( 'widgets_init', 'law_widgets_init' );
 function law_scripts() {
 	wp_enqueue_style( 'law-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'law-googlefonts', 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800' );
+	wp_enqueue_style( 'law-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' );
 	wp_enqueue_style( 'law-animate-css', get_template_directory_uri() . '/assets/css/animate.css' );
 	wp_enqueue_style( 'law-icomoon-css', get_template_directory_uri() . '/assets/css/icomoon.css' );
 	wp_enqueue_style( 'law-bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.css' );

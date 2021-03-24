@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
-<h1>Practice Areas</h1>
+<?php get_template_part( 'template-parts/section', 'hero' ) ?>
+
+<?php get_template_part( 'template-parts/section', 'practice' ) ?>
+
+<?php get_template_part( 'template-parts/section', 'testimonial' ) ?>
+
+<?php get_template_part( 'template-parts/section', 'started' ) ?>
 
 <?php get_footer(); ?>
