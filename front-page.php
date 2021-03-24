@@ -14,7 +14,7 @@
 
 <?php get_template_part( 'template-parts/section', 'contact' ) ?>
 
-<?php get_template_part( 'template-parts/section', 'blog' ) ?>
+<?php get_template_part( 'template-parts/section', 'blog', ['header' => true] ) ?>
 
 <?php get_template_part( 'template-parts/section', 'about' ) ?>
 

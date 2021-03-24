@@ -4,7 +4,7 @@
 
 <?php get_template_part( 'template-parts/section', 'practice' ) ?>
 
-<?php get_template_part( 'template-parts/section', 'testimonial' ) ?>
+<?php get_template_part( 'template-parts/section', 'about' ) ?>
 
 <?php get_template_part( 'template-parts/section', 'started' ) ?>
 

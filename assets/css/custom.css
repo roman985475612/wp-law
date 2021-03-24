@@ -48,3 +48,9 @@
 #menu-footer-menu li.current_page_item a {
     color:#F95959 !important;
 }
+
+.single-header {
+    margin-top: .7em;
+    margin-bottom: 0;
+    font-size: 3em;
+}
