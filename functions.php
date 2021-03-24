@@ -196,6 +196,11 @@ function law_setup_phpmailer_init( $phpmailer )
 }
 add_action( 'phpmailer_init', 'law_setup_phpmailer_init' );
 
+add_filter( 'navigation_markup_template', 'my_navigation_template', 10, 2 );
+function my_navigation_template( $template, $class ){
+	return '<nav class="navigation %1$s" role="navigation">%3$s</nav>';
+}
+
 /**
  * Custom post type
  */

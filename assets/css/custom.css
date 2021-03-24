@@ -54,3 +54,29 @@
     margin-bottom: 0;
     font-size: 3em;
 }
+
+.pagination ul {
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style-type: none;
+}
+
+.pagination ul > li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 .4em;
+}
+
+.pagination ul > li > .page-numbers {
+    border-radius: .25rem;
+    padding: .2em .5em;
+    height: 2em;
+    font-size: 1.3em;
+    color: #828282;
+}
+
+.pagination ul > li > span.current {
+    color: #fff;
+    background-color: #F95959;
+}
