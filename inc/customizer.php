@@ -31,6 +31,92 @@ function law_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+	$wp_customize->add_section(
+		'law_contact',
+		[
+			'title'			=> __( 'Contact Us', 'law' ),
+			'description'	=> __( 'List of Contacts', 'law' ),
+			'priority'		=> 200,
+		]
+	);
+
+	$setting = 'law_address';
+
+	$wp_customize->add_setting(
+		$setting,
+		[
+			'default'	=> 'No address',
+			'transport'	=> 'refresh'
+		]
+	);
+
+	$wp_customize->add_control(
+		$setting,
+		[
+			'section'	=> 'law_contact',
+			'label'		=> __( 'Address', 'law' ),
+			'type'		=> 'text'
+		]
+	);
+
+	$setting = 'law_phone';
+
+	$wp_customize->add_setting(
+		$setting,
+		[
+			'default'	=> 'No phone',
+			'transport'	=> 'refresh'
+		]
+	);
+
+	$wp_customize->add_control(
+		$setting,
+		[
+			'section'	=> 'law_contact',
+			'label'		=> __( 'Phone', 'law' ),
+			'type'		=> 'text'
+		]
+	);
+
+	$setting = 'law_email';
+
+	$wp_customize->add_setting(
+		$setting,
+		[
+			'default'	=> 'No email',
+			'transport'	=> 'refresh'
+		]
+	);
+
+	$wp_customize->add_control(
+		$setting,
+		[
+			'section'	=> 'law_contact',
+			'label'		=> __( 'Email', 'law' ),
+			'type'		=> 'text'
+		]
+	);
+
+	$setting = 'law_site';
+
+	$wp_customize->add_setting(
+		$setting,
+		[
+			'default'	=> 'No site',
+			'transport'	=> 'refresh'
+		]
+	);
+
+	$wp_customize->add_control(
+		$setting,
+		[
+			'section'	=> 'law_contact',
+			'label'		=> __( 'Site', 'law' ),
+			'type'		=> 'text'
+		]
+	);
+
 }
 add_action( 'customize_register', 'law_customize_register' );
 

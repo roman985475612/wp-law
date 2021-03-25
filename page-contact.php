@@ -10,10 +10,10 @@
                 <div class="fh5co-contact-info">
                     <h3>Contact Information</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 198 West 21th Street, Suite 721 New York NY 10016</li>
-                        <li><i class="fas fa-phone"></i> <a href="tel://1234567920">+ 1235 2355 98</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-                        <li><i class="fas fa-globe-americas"></i> <a href="http://gettemplates.co">gettemplates.co</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <?= get_theme_mod( 'law_address' ) ?></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel://<?= get_theme_mod( 'law_phone' ) ?>">+ <?= get_theme_mod( 'law_phone' ) ?></a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:<?= get_theme_mod( 'law_email' ) ?>"><?= get_theme_mod( 'law_email' ) ?></a></li>
+                        <li><i class="fas fa-globe-americas"></i> <a href="http://<?= get_theme_mod( 'law_site' ) ?>"><?= get_theme_mod( 'law_site' ) ?></a></li>
                     </ul>
                 </div>
 
