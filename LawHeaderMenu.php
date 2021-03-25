@@ -78,7 +78,7 @@ class LawHeaderMenu extends Walker_Nav_Menu
             }
         }
 
-        if( $item->current_item_parent ) $classes[] = 'active';
+        if( $item->current_item_ancestor && $item->current_item_parent ) $classes[] = 'active';
 
         if ( $args->walker->has_children ) {
             $classes[] = 'has-dropdown';
