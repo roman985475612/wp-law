@@ -39,4 +39,36 @@
 			}
 		} );
 	} );
+
+	// Contact page
+	wp.customize( 'law_address', function ( value ) {
+		value.bind( function ( to ) {
+			$( 'i.fa-map-marker-alt + a' ).text( to )
+		} )
+	} );
+
+	wp.customize( 'law_phone', function ( value ) {
+		value.bind( function ( to ) {
+			el = $( 'i.fa-phone + a' )
+			el.text( '+' + to )
+			el.attr( 'href', 'tel://' + to )
+		} )
+	} );
+
+	wp.customize( 'law_email', function ( value ) {
+		value.bind( function ( to ) {
+			el = $( 'i.fa-envelope + a' )
+			el.text( to )
+			el.attr( 'href', 'mailto://' + to )
+		} )
+	} );
+
+	wp.customize( 'law_site', function ( value ) {
+		value.bind( function ( to ) {
+			el = $( 'i.fa-globe-americas + a' )
+			el.text( to )
+			el.attr( 'href', 'https://' + to )
+		} )
+	} );
+
 }( jQuery ) );

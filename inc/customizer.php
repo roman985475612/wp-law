@@ -47,7 +47,7 @@ function law_customize_register( $wp_customize ) {
 		$setting,
 		[
 			'default'	=> 'No address',
-			'transport'	=> 'refresh'
+			'transport'	=> 'postMessage'
 		]
 	);
 
@@ -66,7 +66,7 @@ function law_customize_register( $wp_customize ) {
 		$setting,
 		[
 			'default'	=> 'No phone',
-			'transport'	=> 'refresh'
+			'transport'	=> 'postMessage'
 		]
 	);
 
@@ -85,7 +85,7 @@ function law_customize_register( $wp_customize ) {
 		$setting,
 		[
 			'default'	=> 'No email',
-			'transport'	=> 'refresh'
+			'transport'	=> 'postMessage'
 		]
 	);
 
@@ -104,7 +104,7 @@ function law_customize_register( $wp_customize ) {
 		$setting,
 		[
 			'default'	=> 'No site',
-			'transport'	=> 'refresh'
+			'transport'	=> 'postMessage'
 		]
 	);
 
