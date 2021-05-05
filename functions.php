@@ -9,6 +9,7 @@
 
 require_once get_template_directory() . '/LawHeaderMenu.php';
 require_once get_template_directory() . '/helpers.php';
+require_once get_template_directory() . '/inc/custom-widgets/Law_MyWidget.php';
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
@@ -131,12 +132,14 @@ function law_widgets_init() {
 			'name'          => esc_html__( 'Footer', 'law' ),
 			'id'            => 'footer',
 			'description'   => esc_html__( 'Add widgets here.', 'law' ),
-			'before_widget' => '<div class="col-md-3">',
+			'before_widget' => '<div class="col-md-2">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4>',
 			'after_title'   => '</h4>',
 		)
 	);
+
+	register_widget( 'Law_MyWidget' );
 }
 add_action( 'widgets_init', 'law_widgets_init' );
 
