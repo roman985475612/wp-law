@@ -22,7 +22,7 @@ class Law_MyWidget extends WP_Widget
         $title = apply_filters( 'widget_title', $title );
         $text = apply_filters( 'widget_text', $text );
 
-        echo '<div class="col-md-4">';
+        echo '<div class="col-md-2">';
         echo $before_title . $title . $after_title;
         echo $text;
         echo $after_widget;

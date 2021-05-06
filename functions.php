@@ -10,6 +10,7 @@
 require_once get_template_directory() . '/LawHeaderMenu.php';
 require_once get_template_directory() . '/helpers.php';
 require_once get_template_directory() . '/inc/custom-widgets/Law_MyWidget.php';
+require_once get_template_directory() . '/inc/custom-widgets/Law_CategoryWidget.php';
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
@@ -140,6 +141,8 @@ function law_widgets_init() {
 	);
 
 	register_widget( 'Law_MyWidget' );
+
+	register_widget( 'Law_CategoryWidget' );
 }
 add_action( 'widgets_init', 'law_widgets_init' );
 

@@ -41,12 +41,18 @@
     list-style-type: none !important;
 }
 
-#menu-footer-menu li a {
+#menu-footer-menu li:not(.current-cat) a {
     color: rgba(0, 0, 0, .5) !important;
 }
 
-#menu-footer-menu li.current_page_item a {
+#menu-footer-menu li.current_page_item a,
+#menu-footer-menu li.current-cat > a {
     color:#F95959 !important;
+}
+
+#menu-footer-menu ul.children {
+    margin-left: 0;
+    padding-left: 1.5em;
 }
 
 .single-header {
